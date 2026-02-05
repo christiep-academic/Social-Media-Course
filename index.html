@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All One Needs to Know About Social Media — Spring 2026</title>
+  <meta name="description" content="CMAA5022 / EMIA6500R / CSM160021 — All One Needs to Know About Social Media (Spring 2026) at HKUST (GZ) and HKUST." />
+  <style>
+    
+    :root{
+      --bg: #0b1020;
+      --panel: #121933;
+      --muted: #97a3b6;
+      --text: #e6edf7;
+      --brand: #6aa9ff;
+      --brand-2:#c89cff;
+      --accent:#4ade80;
+      --link:#7ec3ff;
+      --border: #243053;
+      --focus: #a3d3ff;
+      --maxw: 1500px;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+  --header-bg: url('images/main-img.png'); /* point this to your image path, e.g., url('images/main-img.jpg') */
+
+    }
+    /* Light theme variables */
+    :root.light{
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --muted: #556076;
+      --text: #0e1425;
+      --brand: #2b6dde;
+      --brand-2:#8a5bd1;
+      --accent:#16a34a;
+      --link:#1e63d6;
+      --border: #e3e8f2;
+      --focus: #2b6dde;
+      --shadow: 0 10px 30px rgba(10, 22, 50, 0.08);
+    }
+
+
+/* Header background image with overlay for readability */
+header{
+  position: sticky; top: 0; z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel); /* fallback color */
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    var(--header-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: saturate(1.1) contrast(1);
+}
+
+/* Light theme tweak: slightly lighter overlay to keep contrast */
+:root.light header{
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0.20)),
+    var(--header-bg);
+}
+
+/* Optional: adjust brand and nav contrast over image */
+.brand-title span,
+.nav a { color: #f2f5f9; }
+.nav a:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.35); }
+.nav a.active{
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.45);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+.mode-toggle{ background: rgba(0,0,0,0.25); border-color: rgba(255,255,255,0.35); color: #fff; }
+:root.light .mode-toggle{ background: rgba(255,255,255,0.35); color: #0e1425; }
+
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background:var(--bg);
+      line-height: 1.6;
+      transition: background-color .2s ease, color .2s ease;
+    }
+    :root.light body{
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(43,109,222,0.05), transparent 60%),
+        radial-gradient(900px 500px at 90% -20%, rgba(138,91,209,0.05), transparent 60%),
+        linear-gradient(180deg, #f7f9fd, #f6f7fb 40%, #f7f9fd 100%);
+    }
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    img{ max-width: 100%; display: block; }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+
+   
+    .brand{ display: flex; align-items: center; gap: .75rem; padding: .85rem 0; font-weight: 700; letter-spacing: .2px; }
+    .brand-badge{
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 6px 18px rgba(106,169,255,0.35), inset 0 0 20px rgba(255,255,255,0.15);
+    }
+    .brand-title{ display: flex; flex-direction: column; line-height: 1.2; }
+    .brand-title strong{ font-size: 1rem; }
+    .brand-title span{ font-size: .8rem; color: var(--muted); }
+
+    .nav{ display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+    .nav a{
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .55rem .85rem; border-radius: 10px; color: var(--text);
+      border: 1px solid transparent; font-weight: 600; letter-spacing: .2px;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .nav a:hover{ background: rgba(255,255,255,0.06); border-color: var(--border); text-decoration: none; }
+    :root.light .nav a:hover{ background: rgba(10,22,50,0.05); }
+    .nav a.active{
+      background: linear-gradient(135deg, rgba(106,169,255,0.20), rgba(200,156,255,0.18));
+      border-color: rgba(126,195,255,0.35);
+      box-shadow: 0 4px 14px rgba(106,169,255,0.18);
+    }
+    :root.light .nav a.active{
+      background: linear-gradient(135deg, rgba(43,109,222,0.10), rgba(138,91,209,0.10));
+      border-color: rgba(43,109,222,0.25);
+      box-shadow: 0 4px 14px rgba(43,109,222,0.10);
+    }
+
+    .header-row{ display: grid; grid-template-columns: 1fr auto; gap: .75rem; align-items: center; padding-bottom: .5rem; }
+
+    .mode-toggle{
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .45rem .7rem; border-radius: 10px; cursor: pointer;
+      border: 1px solid var(--border); color: var(--text); background: transparent;
+      font-weight: 600;
+    }
+    .mode-toggle:focus{ outline: 2px solid var(--focus); outline-offset: 2px; }
+
+    .hero{
+      margin: 1.25rem auto 1.5rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    :root.light .hero{ background: linear-gradient(180deg, rgba(10,22,50,0.02), rgba(10,22,50,0.01)); }
+    .hero-inner{ display: grid; grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem; }
+    @media(min-width: 900px){ .hero-inner{ grid-template-columns: 1.2fr .8fr; padding: 1.5rem 1.5rem 1.25rem; } }
+    .hero h1{ margin: 0 0 .4rem 0; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.2; letter-spacing: .3px; }
+    .hero p{ margin: 0; color: var(--muted); }
+    .badge{
+      display: inline-block; font-size: .8rem; padding: .25rem .5rem; border-radius: 999px;
+      background: rgba(74,222,128,0.12); color: var(--accent); border: 1px solid rgba(74,222,128,0.35); margin-top: .5rem;
+    }
+
+    .card{
+      background: rgba(16,23,47,0.9);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+    }
+    :root.light .card{ background: var(--panel); }
+    .card h2{ margin-top: 0; font-size: 1.15rem; }
+
+    .page{ display: none; }
+    .page.active{ display: block; animation: fade .2s ease-out; }
+    @keyframes fade{ from{ opacity: 0; transform: translateY(4px);} to{ opacity: 1; transform: none;} }
+
+    .table-wrap{
+      overflow-x: auto; border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+    :root.light .table-wrap{ background: rgba(10,22,50,0.02); }
+    table{ width: 100%; border-collapse: collapse; min-width: 820px; }
+    thead th{
+      text-align: left; font-size: .9rem; color: var(--muted);
+      background: rgba(255,255,255,0.03);
+    }
+    :root.light thead th{ background: rgba(10,22,50,0.03); }
+    th, td{ padding: .75rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tbody tr:hover{ background: rgba(255,255,255,0.03); }
+    :root.light tbody tr:hover{ background: rgba(10,22,50,0.03); }
+
+    footer{ border-top: 1px solid var(--border); margin-top: 2rem; padding: 1rem 0; color: var(--muted); }
+
+    .btn{
+      display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .9rem;
+      background: linear-gradient(135deg, rgba(126,195,255,0.18), rgba(200,156,255,0.16));
+      color: var(--text); border: 1px solid rgba(126,195,255,0.35);
+      border-radius: 10px; text-decoration: none; font-weight: 600;
+      transition: transform .06s ease, box-shadow .2s ease;
+      box-shadow: 0 6px 18px rgba(126,195,255,0.18);
+    }
+    :root.light .btn{
+      background: linear-gradient(135deg, rgba(43,109,222,0.12), rgba(138,91,209,0.10));
+      border-color: rgba(43,109,222,0.25);
+      box-shadow: 0 6px 18px rgba(43,109,222,0.10);
+    }
+    .btn:hover{ text-decoration: none; transform: translateY(-1px); }
+    .muted{ color: var(--muted); }
+    .list{ margin: .25rem 0 0 1rem; padding: 0; }
+    .list li{ margin: .35rem 0; }
+    .grid-2{ display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media(min-width: 800px){ .grid-2{ grid-template-columns: 1fr 1fr; } }
+    .small{ font-size: .92rem; }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .callout{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius: var(--radius);
+      padding: .9rem;
+    }
+    :root.light .callout{ background: linear-gradient(180deg, rgba(10,22,50,0.02), rgba(10,22,50,0.015)); }
+
+.schedule-table { width: 100%; border-collapse: collapse; }
+.schedule-table th, .schedule-table td { border: 1px solid var(--border, #e5e7eb); padding: 0.5rem; vertical-align: top; }
+.schedule-table th { background: var(--panel, #f8fafc); text-align: left; }
+.schedule-table ul { margin: 0; padding-left: 1.1rem; }
+.schedule-table .note { color: var(--muted, #6b7280); font-style: italic; }
+.schedule-table .muted { color: var(--muted, #9ca3af); }
+.schedule-table .due { color: var(--danger, #b91c1c); font-weight: 600; }
+.schedule-table .special { color: var(--accent, #7c3aed); }
+.footnotes { margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted, #6b7280); }
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="header-row">
+      <div class="brand">
+        <div class="brand-title">
+          <strong>All One Needs to Know About Social Media</strong>
+          <span>Spring 2026 · CMAA5022 / EMIA6500R / CSM160021</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:.5rem;">
+        <button id="modeToggle" class="mode-toggle" aria-label="Toggle light/dark mode">Toggle theme</button>
+      </div>
+      <nav class="nav" aria-label="Main">
+        <a href="#info" data-route>Course Info</a>
+        <a href="#schedule" data-route>Schedule</a>
+        <a href="#materials" data-route>Materials and Instructions</a>
+        <a href="#groups" data-route>Group Formation</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>All One Needs to Know About Social Media</h1>
+          <p class="small">Postgraduate course exploring social media ecosystems, creator workflows, analytics, ethics, and immersive media including social VR and the Metaverse.</p>
+          <span class="badge">Spring 2026</span>
+        </div>
+        <div class="callout">
+          <strong>Quick links</strong>
+          <ul class="list">
+            <li><a href="#schedule">Jump to schedule</a></li>
+            <li><a href="#materials">Download materials</a></li>
+            <li><a href="#groups">Form your team</a>: <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/ccpangaa_connect_ust_hk/IQDfJ269XnhoQKt5IQzB5O53AbtnTPDvyEP_RQtvs2Eg6FE?e=od6gcn" target="_blank">Groupmate Finder and Registration Form</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Info -->
+    <section id="info" class="page active">
+      <div class="card">
+        <h2>Course Information</h2>
+        <div class="grid-2">
+          <div>
+            <p><strong>Course Code:</strong> <br> EMIA6500R (CWB) · CMAA5022 (GZ) · CSM160021 (Helsinki)</p>
+            <p><strong>Credits:</strong> 3</p>
+            <p><strong>Term:</strong> Spring 2026</p>
+            <p><strong>Duration:</strong> 3 hours</p>
+            <p><strong>Instructional Format:</strong> Hybrid (In‑Person and Online Zoom/VR)</p>
+            <p><strong>Locations:</strong></p>
+            <ul class="list">
+              <li>Room 223, W1, Metaverse Classroom (GZ)</li>
+              <li>Room 6568, Digital Learning Studio, MTPC [Lift 27 and 28] (CWB)</li>
+              <li>TBD (Helsinki)</li>
+            </ul>
+          </div>
+          <div>
+             <p><strong>CILOs:</strong></p>
+            <ul class="list">
+              <li>CILO‑1: Analyze and strategically use diverse social media platforms across contexts, informed by analytics and research.</li>
+              <li>CILO‑2: Design ethical, innovative workflows leveraging generative AI and multimodal tools.</li>
+              <li>CILO‑3: Craft digital stories across formats, including VR, with accessibility and inclusivity.</li>
+              <li>CILO‑4: Apply gamification and nudge theory while evaluating ethical risks.</li>
+              <li>CILO‑5: Conduct and communicate research to inform strategy and measure outcomes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="text-align: justify;"">
+            <strong>Overview:</strong> <br>
+            All One Needs to Know about Social Media (also known as Social Media and Social VR) is a postgraduate course that immerses students in the evolving ecosystem of social media and its applications across creative practice. Blending human-led instruction with AI-driven teaching assistants and lecturers, the course explores how creators ideate, produce, and distribute content in networked environments. A distinctive feature is its multi-university collaboration: students co-create and discuss with peers from partner institutions worldwide inside a shared Metaverse Classroom in VR, experiencing truly cross-cultural production workflows and critiques. Students engage critically and practically with platform logics, audience behaviors, and emerging technologies, including generative AI, social VR, and Metaverse. Each class includes a seminar session featuring global researchers and student teams presenting current work, giving learners direct exposure to cutting-edge scholarship and practice. Through case and paper analyses and iterative prototyping, participants develop fluency in creative content creation, digital storytelling, multimedia production, gamification for engagement, and data-informed strategy. Emphasis is placed on ethical and responsible creation, accessibility and inclusivity, experimentation, and reflective practice. Students will be capable of designing innovative, research-informed social media experiences that resonate across diverse communities and contexts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Our Innovative Learning Environment</h2>
+        <ul class="list">
+          <li>Human + AI Digital Teacher co‑lecturing</li>
+          <li>AI Teaching Assistant Q&A platform (demo)</li>
+          <li>Metaverse Classroom in VR: stand‑ups, whiteboarding, artifact pin‑ups, presentations</li>
+          <li>Global Seminar Series with rotating themes and reflective takeaways</li>
+          <li>Multi‑University Collaborative Projects with industry‑mirrored roles and milestone critiques</li>
+          <li>Interactive activities: Gamified VR game, VR storytelling</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Assessment Brief and Grading Breakdown</h2>
+        No Examination! Group projects can be submitted as research/start-up projects! We encourage creativity!
+        <ul class="list">
+          <li><strong>Research Essay/Project</strong> — 35% — Individual — Not less than 2500 words</li>
+          <li><strong>Hands‑on Creative Project</strong>
+            <ul class="list">
+              <li>Project Report — 10% — Group — 15+10 minutes</li>
+              <li>Presentation & Demo — 25% — Group — Description and Reflection</li>
+            </ul>
+          </li>
+          <li><strong>Paper Readings & Presentations</strong> — 20% — Group — 15+5 minutes</li>
+          <li><strong>Participation</strong> — 10% — Individual — Online survey in class </li>
+        </ul>
+        <p class="muted small">No final or midterm exams for this course.</p>
+      </div>
+
+      <div class="card">
+        <h2>Reasons to take this course</h2>
+        <ul class="list">
+          <li>Collaborate with peers across time zones and cultures, mirroring how leading global teams work</li>
+          <li>We emphasize practical projects, modern tools, and communication practices valued by top employers and researchers</li>
+          <li>Collaborating on hands‑on projects so you can expect portfolio‑ready deliverables to be showcased for research roles or job applications</li>
+          <li>Networking via our Weekly Seminar. Guest speakers and alumni panels from both academia and industry, plus connections across three campuses</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Instructor and Teaching Team</h2>
+        <div class="grid-2">
+          <div>
+            <p><strong>Course Instructor (CWB & GZ):</strong> Professor Pan HUI</p>
+            <ul class="list">
+              <li class="small">International Fellow of RAEng, MAE, and IEEE Fellow · Chair Professor, CMA, HKUST (GZ) · EMIA, HKUST</li>
+              <li class="small"><strong>Webpage: </strong><a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">panhui.people.ust.hk</a>, <strong>Email:</strong> <a href="mailto:panhui@ust.hk">panhui@ust.hk</a></li>
+              <li class="small"><strong>Office:</strong> 605, E1, HKUST (GZ). By Appointment.</li>
+            </ul>
+            
+            <p><strong>Course Instructor (UH):</strong> Professor Jussi KANGASHARJU</p>
+            <ul class="list">
+              <li class="small">Professor, Department of Computer Science, Helsinki Institute for Information Technology</li>
+              <li class="small"><strong>Webpage: </strong><a href="https://researchportal.helsinki.fi/en/persons/jussi-kangasharju/" target="_blank" rel="noopener">jussi-kangasharju</a>, <strong>Email:</strong> <a href="mailto:jussi.kangasharju@helsinki.fi">jussi.kangasharju@helsinki.fi</a></li>
+              <li class="small"><strong>Office:</strong> University of Helsinki. By Appointment.</li>
+            </ul>
+          </div>
+          <div>
+             <p><strong>Teaching Assistants (HKUST):</strong></p>
+            <ul class="list">
+              <li>Ching Christie PANG — <a href="mailto:ccpangaa@connect.ust.hk">ccpangaa@connect.ust.hk</a></li>
+              <li>Iris DELIKOURA — <a href="mailto:idelikoura@connect.ust.hk">idelikoura@connect.ust.hk</a></li>
+            </ul>
+
+            <p><strong>Teaching Assistants (HKUST GZ):</strong></p>
+            <ul class="list">
+              <li>Jia SUN — <a href="mailto:jsun666@connect.hkust-gz.edu.cn">jsun666@connect.hkust-gz.edu.cn</a></li>
+              <li>Guanxuan JIANG — <a href="mailto:gjiang240@connect.hkust-gz.edu.cn">gjiang240@connect.hkust-gz.edu.cn</a></li>
+            </ul>
+           
+          <p><strong>Teaching Assistants (Helsinki UH):</strong></p>
+            <ul class="list">
+              <li>Marianna Ojanen — <a href="mailto:marianna.ojanen@helsinki.fi">marianna.ojanen@helsinki.fi</a></li>
+            </ul>
+
+          </div>
+        </div>
+        </div>
+        <div class="card">
+        <h2>Introducing Digital Teachers and Metaverse Classroom</h2>
+        <iframe width="100%" height="550" src="https://www.youtube.com/embed/IayJUZ5xznY?si=Yti2LDygn4Gqz-He" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</iframe>
+
+      </div>
+
+          
+      </div>
+
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="page">
+      <div class="card">
+        <h2>Schedule (Tentative)</h2>
+        <p class="muted small">
+          <strong>Zoom For Class: </strong><a href="https://hkust.zoom.us/j/98002139378?pwd=eVJlVWhFY0sxdWN2aUZGeDBwQzR2QT09">Zoom</a> (Meeting ID: 980 0213 9378; Passcode: 638585).
+          <strong>YouTube Playlist: </strong><a href="https://youtube.com/playlist?list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&si=ui3_reBmtNbqQ8vc">Social Media For Creatives PlayList</a>
+        </p>
+        
+        <table class="schedule-table">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Date</th>
+      <th>Attendance*</th>
+      <th>Topic & PPT</th>
+      <th>Activities & Links</th>
+      <th>Assignments & Deadlines</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>6 Feb</td>
+      <td><span class="muted">—</span></td>
+      <td>All One Needs to Know about Social Media</td>
+      <td>
+        <ul>
+          <li>Course expectations and assessment overview</li>
+          <li>Digital Teacher: Welcome to the Metaverse (<a href="https://www.youtube.com/watch?v=x6vVxxovzgM&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=21" target="_blank">David</a>; 
+          <a href="https://www.youtube.com/watch?v=sSPwyezpI0U&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=22" target="_blank">Liam</a>; 
+          <a href="https://www.youtube.com/watch?v=2rGAtjBIv40&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=20" target="_blank">Maya</a>; 
+          <a href="https://www.youtube.com/watch?v=WxE8m8buo8M&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=19&t=893s" target="_blank">Beatrice</a>)
+          </li>
+
+          <li>VR/Metaverse classroom orientation (<a href="#material">instruction</a>)</li>
+          <li>Self-introduction and discussion for group formation</li>
+          
+        </ul>
+      </td>
+      <td>
+
+         <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/ccpangaa_connect_ust_hk/IQDfJ269XnhoQKt5IQzB5O53AbtnTPDvyEP_RQtvs2Eg6FE?e=od6gcn" target="_blank">Groupmate finder &amp; team info</a>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>13 Feb <span class="note">(hybrid)#</span></td>
+      <td><span class="muted">—</span></td>
+      <td>Social Media and Creativity</td>
+      <td>
+        <ul>
+          <li>GZ: Zoom online group formation / discussion</li>
+          <li>Digital Teacher: Virtual World Affordances 
+            (<a href="https://www.youtube.com/watch?v=Yen8hmiG07w&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=18" target="_blank">Yuri</a>; 
+            <a href="https://www.youtube.com/watch?v=Gt6JG5mYpH4&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=17" target="_blank">Digital Ben</a>)</li>
+          <li>Tutorial: <a href="PDF/Tutorial_API-based-Research.pdf" target="_blank">Using APIs for Data Collection on Social Media Research</a></li>
+        </ul>
+      </td>
+      <td>
+    
+      </td>
+    </tr>
+
+    <tr>
+      <td>3</td>
+      <td>20 Feb <span class="note">(hybrid)#</span></td>
+      <td><span class="muted">—</span></td>
+      <td>Social Media in the East and West</td>
+      <td>
+        <ul>
+          <li>Zoom online group formation / discussion</li>
+          <li>Digital Teacher: Social Media in the East
+            (<a href="https://www.youtube.com/watch?v=LwUEGo1MOag&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=16" target="_blank">Felicia</a>; 
+            <a href="https://www.youtube.com/watch?v=AyTfTbnxvlc&list=PLk-Z1sJ9n4ZpEEPqXoskLTV0WhOV6og0l&index=15" target="_blank">Junwoo</a>)</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Feb 20, 2026</span>: Submit group info (≥4 members with GZ, HK, UH) and topics via  <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/ccpangaa_connect_ust_hk/IQDfJ269XnhoQKt5IQzB5O53AbtnTPDvyEP_RQtvs2Eg6FE?e=od6gcn" target="_blank">form</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>4</td>
+      <td>27 Feb</td>
+      <td>1</td>
+      <td>Power of Multimedia in Social Platforms</td>
+      <td>
+        <ul>
+          <li>Digital Teacher seminar</li>
+          <li>MetaClassroom discussion</li>
+          <li>Paper Reading: Group 1</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Feb 26, 2026</span>: Group 1 submit slides/PDF/presentation materials to Canvas
+      </td>
+    </tr>
+
+    <tr>
+      <td>5</td>
+      <td>6 Mar</td>
+      <td>1</td>
+      <td>Social Research Methods</td>
+      <td>
+        <ul>
+          <li>Digital Teacher seminar</li>
+          <li>MetaClassroom discussion</li>
+          <li>Paper Reading: Group 2</li>
+        </ul>
+      </td>
+      <td><span class="note">5 Mar: PG drop deadline</span> <br>
+          <span class="due">11:59pm, Mar 5, 2026</span>: Group 2 submit slides/PDF/presentation materials to Canvas
+      </td>
+    </tr>
+
+    <tr>
+      <td>6</td>
+      <td>13 Mar</td>
+      <td>1</td>
+      <td>Social Networks and Influence</td>
+      <td>
+        <ul>
+          <li>Digital Teacher</li>
+          <li>MetaClassroom discussion</li>
+          <li>VR Storytelling: US Election 2016</li>
+          <li>Paper Reading: Group 3</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Mar 12, 2026</span>: Group 3 submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>7</td>
+      <td>20 Mar</td>
+      <td>1</td>
+      <td>Homophily, Creative Advertising, Viral Marketing</td>
+      <td>
+        <ul>
+          <li>Digital Teacher seminar</li>
+          <li>MetaClassroom discussion</li>
+          <li>Paper Reading: Group 4</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Mar 19, 2026</span>: Group 4 submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>8</td>
+      <td>27 Mar</td>
+      <td>1</td>
+      <td>Digital Storytelling &amp; Citizen Journalism</td>
+      <td>
+        <ul>
+          <li>Digital Teacher</li>
+          <li>MetaClassroom discussion</li>
+          <li>VR Teacher and Story: Idol Aria</li>
+          <li>Paper Reading: Group 5</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Mar 26, 2026</span>: Group 5 submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>9</td>
+      <td><s>3 Apr</s> <br>10 Apr</td>
+      <td>1</td>
+      <td>Extended Reality (XR) and NFTs</td>
+      <td>
+        <ul>
+          <li>Digital Teacher</li>
+          <li>MetaClassroom discussion</li>
+          <li>Seminar Talk: SURREALITY 2.0 — Curating and producing mixed-reality exhibitions across spaces</li>
+          <li>Paper Reading: Group 6</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Apr 9, 2026</span>: Group 6 submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>10</td>
+      <td>17 Apr</td>
+      <td>1</td>
+      <td>Existing Online Harms Powered by GenAI</td>
+      <td>
+        <ul>
+          <li>Digital Teacher seminar</li>
+          <li>MetaClassroom discussion</li>
+          <li>Paper Reading: Group 7</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Apr 16, 2026</span>: Group 7 submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>11</td>
+      <td>24 Apr</td>
+      <td>1</td>
+      <td>Advanced CSCW: Case Study of Dating &amp; Romance</td>
+      <td>
+        <ul>
+          <li>Digital Teacher seminar</li>
+          <li>MetaClassroom discussion</li>
+          <li>Paper Reading: Group 8</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, Apr 23, 2026</span>: Group 8 submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>12</td>
+      <td><s>1 May</s><br>8 May
+      </td>
+      <td>1</td>
+      <td>Creative Project Presentations</td>
+      <td>
+        <ul>
+          <li>In-class presentations</li>
+        </ul>
+      </td>
+      <td>
+        <span class="due">11:59pm, May 7, 2026</span>: All groups submit slides/PDF/presentation materials to Canvas
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>13</td>
+      <td>15 May</td>
+      <td>1</td>
+      <td>Creative Project Presentations</td>
+      <td>
+        <ul>
+          <li>In-class presentations</li>
+          <li><span class="note">Scored with a short survey filled in class</span></li>
+        </ul>
+      </td>
+      <td>
+        <span class="due special">11:59pm, May 21, 2026 (tentative)</span>:individual research essay/project to Canvas
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="footnotes">
+  <span class="footnote">*</span> Attendance is scored with an in-class short survey (where applicable).<br>
+  <span class="footnote">#</span> 13 and 20 Feb are holidays at the GZ campus, so we are taking online/hybrid mode with no attendance marked. Students are encouraged to join for optimal group formation.
+</p>
+
+      </div>
+    </section>
+
+    <!-- Materials -->
+    <section id="materials" class="page">
+      <div class="card">
+        <h2>Instructions to Use MetaClassroom</h2>
+        <p>Introducing how to use Meta Quest 3 or Pro to enter and use our MetaClassroom</p>
+        <div class="grid-2">
+          <div>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/NazbkW6kDXg?si=0xZp-bT-FlPHJm57" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/cPYB9Z51Q80?si=XTZtlfTFjgvJsH-_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+           </div>
+          </div>
+        <strong>Alternatives: </strong> If you cannot watch videos on YouTube, you can check the videos on <a href="https://hkustconnect-my.sharepoint.com/:v:/g/personal/ccpangaa_connect_ust_hk/IQCxzA-q2YONRK9jAjHoJxZ1AagxeLXtiY3WtleHXu2-RWU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TtCtUf">How to use</a> and <a href="https://hkustconnect-my.sharepoint.com/:v:/g/personal/ccpangaa_connect_ust_hk/IQAo5n6zS4LFSpbmUqJAICMDATIWHKvi0jy1zocEhpcSScE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=5XmmS6">How to Enter </a>MetaClassroom.
+        <br>
+        <br>
+        <a class="btn" href="PDF/manual-metaclassroom.pdf" download>Download Instruction (PDF)</a>
+      </div>
+
+
+      <div class="card">
+        <h2>Course Materials</h2>
+        <p>Slides and readings will be posted to Canvas</p>
+        <ul class="list">
+          <li><a href="PDF/UPD_Syllabus_Spring2026_EMIA6500F-CMAA5022.docx.pdf">Download Syllabus (PDF)</a></li>
+          
+          <li><a href="#">Lecture Slides Week 1</a></li>
+          <li><a href="#">Reading Pack</a></li>
+        </ul>
+      </div>
+
+      
+      <div class="card">
+        <h2>Academic Integrity</h2>
+        <p>We uphold the highest standards of academic integrity. All students must adhere to policies in the Student Conduct and Academic Integrity chapters of the Handbooks for HKUST‑GZ and HKUST.</p>
+      </div>
+
+      <div class="card">
+        <h2>Remarks & Readings</h2>
+        <p><strong>Keywords:</strong> Social Media Strategies, Creative Engagement, AIGC, Visual Storytelling, Branding, Influencer Marketing, Analytics, Cross‑platform Optimization, Community Building, Cultural Perspectives, Collaboration, Emerging Trends, Social Research, Nudge Theory, Gamification.</p>
+        <p><strong>Recommended Readings:</strong></p>
+        <ul class="list">
+          <li>Easley & Kleinberg — Networks, Crowds, and Markets (selected chapters)</li>
+          <li>Roman Kmenta — What on Earth Should I Post?</li>
+          <li>Reza Zafarani — Social Media Mining: An Introduction</li>
+          <li>Handbook of Research on Digital Media and Creative Technologies</li>
+          <li>ICIDS 2023 Proceedings (and other years)</li>
+          <li>Selected papers (WWW, KDD, CHI, CSCW, ISMAR, IEEE VR) — see Canvas updates</li>
+        </ul>
+        <p><strong>Optional Reading:</strong> To be updated on Canvas per interests and topics.</p>
+        <div class="callout small">
+          <ul class="list">
+            <li>Announcements on Canvas; slides posted ≥ 6 hours before class.</li>
+            <li>All assignments submitted via Canvas on Tuesdays before 23:59.</li>
+            <li>Projects in groups of 3–5, ideally cross‑disciplinary and cross‑campus.</li>
+            <li>You’ll meet several digital teachers; please share feedback and preferences.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Instruction</h2>
+        <p>Assignment guidelines, submission instructions, and rubrics.</p>
+        <div class="callout">
+          <p><strong>How to submit:</strong> Use the Canvas submission link before 23:59 on the due date. Accepted formats: PDF, public links, or zipped projects.</p>
+        </div>
+        <h3>General Expectations</h3>
+        <ul class="list">
+          <li>Be respectful and constructive in discussions.</li>
+          <li>Cite sources for all media and data used.</li>
+          <li>Prototype early; iterate often.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Group Formation -->
+    <section id="groups" class="page">
+      <div class="card">
+        <h2>Group Formation</h2>
+  
+        <ul class="list">
+          <li>Form teams of at least 4  members, with at least 1 from HKUST(GZ), 1 from HKUST, and 1 from UH. </li>
+          <li>You can use the Groupmate Finder to find your groupmates with similar interested on <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/ccpangaa_connect_ust_hk/IQDfJ269XnhoQKt5IQzB5O53AbtnTPDvyEP_RQtvs2Eg6FE?e=od6gcn" target="_blank">Form</a>.</li>
+          <li>Fill in the <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/ccpangaa_connect_ust_hk/IQDfJ269XnhoQKt5IQzB5O53AbtnTPDvyEP_RQtvs2Eg6FE?e=od6gcn" target="_blank">team roster and proposed project topic</a> by Week 3 (20 Feb).</li>
+          <li>Student(s) who fail to find your group until week 3 will be assigned and you cannot reject the arrangement, so plan it wisely.</li>
+        </ul>
+        <div class="callout">
+          <p class="mono small">Your group will be a big part of this course. So make sure to get acquainted, exchange numbers/e-mail/social media/etc.</p>
+        </div>
+
+        <br>
+        <h2>In Your Group...</h2>
+        <ul class="list">
+          <li>You should introduce yourselves, and then think about social media you use, observe, or find interesting. </li>
+          <li>Identify 2-3 phenomena you'd like to track for the next 10 weeks.</li>
+          <li>Create a <a href="https://miro.com/login/">Miro Board</a> and share in the <a href="https://hkustconnect-my.sharepoint.com/:x:/g/personal/ccpangaa_connect_ust_hk/IQDfJ269XnhoQKt5IQzB5O53AbtnTPDvyEP_RQtvs2Eg6FE?e=od6gcn" target="_blank">form</a></li>
+        </ul>
+      </div>
+      <div class="card">  
+        <br>
+        <h2>A phenomenon could be: </h2>
+        <ul class="list">
+          <li>A creator or influencer (someone active you can follow) </li>
+          <li>A platform or feature (an app, a tool, a new functionality)</li>
+          <li>A content format or trend (a meme style, a video genre, a hashtag)</li>
+          <li>A controversy or ongoing debate (policy changes, moderation issues, a scandal)</li>
+          <li>A community or subculture (a fandom, a niche group, a movement)</li>
+          <li>A brand or campaign (how a company uses social media)</li>
+        </ul>
+        <br>
+        <h2>On Your Miro Board ...</h2>
+        For each phenomenon you propose, add a sticky note to your team's Miro board with:
+        <ul class="list">
+          <li>Name of the phenomenon</li>
+          <li>Brief description (2-3 sentences)</li>
+          <li>Why it interests you</li>
+          <li>One link or example</li>
+        </ul>
+
+        <br>
+        <h2>Selection criteria:</h2>
+        Your phenomenon must be...
+        <ul class="list">
+          <li>Observable by everyone on your team (not behind a paywall, not in a language no one reads)</li>
+          <li>Active and evolving (things are still happening, not a finished case from the past)</li>
+          <li>Present in both Eastern and Western contexts (or its absence in one context is interesting)</li>
+          <li>Rich enough to analyze for 10 weeks through different lenses</li>
+        </ul>
+        </div>
+        <div class="card">        
+        <br>
+        <h2>VR Group Discussion in Every Class (MetaClassroom) - 45 minutes Discussion + 15 minutes Wrap-up</h2>
+        Discuss in MetaClassroom / Zoom Breakout Room. Then, update your Miro board with:
+        <ul class="list">
+          <li>Create a header with your chosen phenomenon</li>
+          <li>Write a one-paragraph description of what it is</li>
+          <li>Add initial links and examples from Hong Kong SAR, Guangzhou, and Helsinki perspectives</li>
+          <li>List what you already know and what you want to find out</li>
+        </ul>
+         <div class="callout">
+          <p class="mono small">What you're building toward each week, you'll apply that week's course concepts to your phenomenon. By week 11, your Miro board will tell the complete story of your phenomenon analyzed through multiple lenses: creativity, East/West differences, multimedia, networks, virality, storytelling, XR, gamification, and manipulation.
+          <br>
+          <br>
+          Your final presentation will walk the class through your phenomenon's journey and what you learned together.
+          </p>
+        </div>
+      </div>
+      <div class="card">        
+        <br>
+        <h2>For Your Paper Reading Presentation</h2>
+        <ul class="list">
+  <li>Schedule: One group presents each week from Week 4 to Week 11 (be careful to the sign-up form for your assigned date).</li>
+  <li>Format: 15-minute presentation followed by 5 minutes of Q&A.</li>
+  <li>Content: Summarize paper/readings' core argument, methods, key findings, and limitations. Connect it to related work and provide a brief literature review around your chosen phenomenon.</li>
+  <li>Goals: 
+    <ul>
+      <li>Introduce the topic and why it matters.</li>
+      <li>Highlight notable insights, open questions, and real-world implications.</li>
+      <li>Engage the audience (e.g., a quick poll, example, or “fun fact”).</li>
+    </ul>
+  </li>
+  <li>Preparation: Submit your slides and relevant links at least 24 hours before class on Canvas.</li>
+  <li>Evaluation criteria: clarity, accuracy, synthesis of related work, critical insight, and audience engagement.</li>
+</ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="small">
+        © 2026 All One Needs to Know About Social Media · HKUST (GZ) · HKUST
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple hash router
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('[data-route]');
+    function setActive(hash){
+      const target = (hash || '#info');
+      pages.forEach(p => p.classList.toggle('active', '#' + p.id === target));
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === target));
+      if (location.hash) window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    window.addEventListener('hashchange', () => setActive(location.hash));
+    window.addEventListener('DOMContentLoaded', () => setActive(location.hash));
+
+    // Theme: respect system, allow toggle, persist in localStorage
+    const root = document.documentElement;
+    const STORAGE_KEY = 'site-theme';
+    function applyTheme(theme){
+      if(theme === 'light'){ root.classList.add('light'); }
+      else { root.classList.remove('light'); }
+      localStorage.setItem(STORAGE_KEY, theme);
+    }
+    function detectInitialTheme(){
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if(saved){ return saved; }
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      return prefersLight ? 'light' : 'dark';
+    }
+    const initial = detectInitialTheme();
+    applyTheme(initial);
+
+    const btn = document.getElementById('modeToggle');
+    function currentTheme(){ return root.classList.contains('light') ? 'light' : 'dark'; }
+    function toggleTheme(){ applyTheme(currentTheme() === 'light' ? 'dark' : 'light'); }
+    btn.addEventListener('click', toggleTheme);
+
+    // Update if system preference changes and no manual override
+    const media = window.matchMedia('(prefers-color-scheme: light)');
+    media.addEventListener?.('change', e => {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if(!saved){ applyTheme(e.matches ? 'light' : 'dark'); }
+    });
+  </script>
+</body>
+</html>
